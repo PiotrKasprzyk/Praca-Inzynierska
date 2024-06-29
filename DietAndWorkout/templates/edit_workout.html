@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edytuj Trening</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="editworkoutbackground">
+    <nav>
+        <div class="navbar">
+            <a href="{{ url_for('home') }}">Strona Główna</a>
+            <a href="{{ url_for('diet') }}">Dieta</a>
+            <a href="{{ url_for('workout') }}">Trening</a>
+            <a href="{{ url_for('news') }}">Wiadomości</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('profile') }}">Profil</a>
+                <a href="{{ url_for('logout') }}">Wyloguj</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Logowanie</a>
+                <a href="{{ url_for('register') }}">Rejestracja</a>
+            {% endif %}
+            <a href="{{ url_for('change_theme') }}">Zmień motyw</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>Edytuj trening</h1>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.exercise_name.label }}<br>
+                {{ form.exercise_name(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.day.label }}<br>
+                {{ form.day(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.sets.label }}<br>
+                {{ form.sets(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.reps.label }}<br>
+                {{ form.reps(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.submit_workout(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+</body>
+</html>

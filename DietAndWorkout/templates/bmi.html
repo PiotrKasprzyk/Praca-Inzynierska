@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_dark.css') }}">
+    <title>BMI Calculator</title>
+</head>
+<body class="bmibackground">
+    {% include 'navbar.html' %}
+    <div class="container2">
+        <h2>Calculate your BMI</h2>
+        <form method="POST" action="{{ url_for('bmi') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group1">
+                {{ form.weight.label }}<br>
+                {{ form.weight }}<br>
+            </div>
+            <div class="form-group1">
+                {{ form.height.label }}<br>
+                {{ form.height }}<br>
+            </div>
+            <div class="form-group1">
+                {{ form.submit }}<br>
+            </div>
+        </form>
+        {% if bmi %}
+        <div class="result">
+            <h3>Your BMI: {{ bmi }}</h3>
+            <p>Category: {{ category }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

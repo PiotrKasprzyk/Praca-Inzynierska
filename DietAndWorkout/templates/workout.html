@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trening</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="workout-background" >
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Plany Treningowe</h1>
+        <div class="plan-list">
+            {% for plan in workout_plans %}
+                <div class="plan-item">
+                    <div>
+                        <h2 class="plan-name">{{ plan.exercise_name }}</h2>
+                        <p class="plan-details">{{ plan.day }} - {{ plan.sets }}x{{ plan.reps }}</p>
+                    </div>
+                    <div class="plan-actions">
+                        <a href="{{ url_for('edit_workout', workout_id=plan.id) }}" class="btn btn-primary">Edytuj</a>
+                        <form action="{{ url_for('delete_workout', workout_id=plan.id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Usuń</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

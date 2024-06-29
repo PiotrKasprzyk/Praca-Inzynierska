@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_dark.css') }}">
+
+    <title>Profil użytkownika</title>
+</head>
+<body class="profile-background">
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h2>Aktualizacja profilu</h2>
+        <form method="POST" action="{{ url_for('profile') }}">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.username.label }}<br>
+                {{ form.username(size=32) }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.email.label }}<br>
+                {{ form.email(size=32) }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.first_name.label }}<br>
+                {{ form.first_name(size=32) }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.last_name.label }}<br>
+                {{ form.last_name(size=32) }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.age.label }}<br>
+                {{ form.age }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.height.label }}<br>
+                {{ form.height }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.weight.label }}<br>
+                {{ form.weight }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.target_weight.label }}<br>
+                {{ form.target_weight }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.exercise_frequency.label }}<br>
+                {{ form.exercise_frequency }}<br>
+            </div>
+            <div class="form-group">
+                {{ form.submit }}<br>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,504 @@
+/* Ogólne style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0818ff9c;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    color: #ffffff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    align-items: center;
+
+}
+.container1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    color : #ffffff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+.container2 {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    color: #000000;
+    text-shadow: 0.1em 0.1em 0.2em black;
+    align-items: center;
+
+}
+/* Nawigacja */
+nav {
+    background: #000000;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+    margin: 0 10px;
+}
+
+nav a:hover {
+    color: #c0c0c0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Formularze */
+.form-group {
+    margin-bottom: 15px;
+    color:#ffffff;
+}
+.form-group1 {
+    margin-bottom: 15px;
+    color:#ffffff;
+}
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3cff00;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn-primary {
+    background-color: #2bff00;
+    color: rgb(0, 0, 0);
+}
+
+.btn-primary:hover {
+    background-color: #00fff2;
+}
+.btn-danger {
+    background-color: #ff0000;
+    color: rgb(0, 0, 0);
+}
+
+/* Posty */
+.post-container {
+    width: 60%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #000000;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.post-container h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.post-container p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.like-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.like-button:hover {
+    background-color: #0056b3;
+}
+
+.like-count {
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* Komentarze */
+.comments-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.comment-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment-item p {
+    margin: 0;
+}
+
+.comment-meta {
+    font-size: 0.9em;
+    color: #888;
+}
+
+.comment-form {
+    margin-top: 20px;
+}
+.result {
+    font-size: 1.5em;
+    color: #ffffff;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+/* Produkty */
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-shadow: 0.1em 0.1em 0.2em black
+}
+
+.product-item:last-child {
+    border-bottom: none;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.product-name {
+    font-size: 1.2em;
+    text-shadow: 0.1em 0.1em 0.2em black;
+}
+
+.product-details {
+    font-size: 0.9em;
+    color: #ffffff;
+    text-shadow: 0.1em 0.1em 0.2em black
+}
+
+/* Dieta i Trening */
+.plan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.plan-item:last-child {
+    border-bottom: none;
+}
+
+.plan-name {
+    font-size: 2em;
+}
+
+.plan-details {
+    font-size: 1,5em;
+    color: #ffffff;
+}
+
+/* Tematy */
+body.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-theme nav {
+    background: #444;
+}
+
+.dark-theme .post-container, .dark-theme .product-item, .dark-theme .plan-item {
+    background-color: #555;
+    color: #f4f4f4;
+}
+
+.dark-theme .form-control, .dark-theme .btn {
+    background-color: #666;
+    color: #f4f4f4;
+}
+
+.dark-theme .btn-primary {
+    background-color: #0088cc;
+}
+/* Dieta i Trening */
+.plan-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 10px solid #ffffff;
+}
+
+.plan-item:last-child {
+    border-bottom: none;
+}
+
+.plan-name {
+    font-size: 2em;
+}
+
+.plan-details {
+    font-size: 1,5em;
+    color: #ffffff;
+}
+.logo {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 0px;
+}
+
+.navbar a img {
+    vertical-align: middle;
+}
+/* Stylizacja dla podstrony Wiadomości */
+.news-background {
+    background-image: url('/static/images/news_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    text-shadow: 0.1em 0.1em 0.2em black;
+    font-size: medium;
+    font-size: 2em;
+    font-weight:bold;
+    align-items: center;
+    
+    padding: 20px; 
+}
+
+.news-content {
+    background: rgba(0, 0, 0, 0.7); 
+    text-shadow: 0.1em 0.1em 0.2em black;
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Stylizacja dla strony głównej */
+.home-background {
+    background-image: url('/static/images/home_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #000000; 
+    font-size : 2em;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    
+    text-align: center;
+    
+    padding: 20px; 
+}
+
+.home-content {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Stylizacja dla strony diety */
+.diet-background {
+    background-image: url('/static/images/diet_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    font-size: 2em;
+    font-weight: bold;
+    padding: 20px; 
+}
+
+.diet-content {
+    background: rgba(255, 255, 255, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Stylizacja dla strony treningu */
+.workout-background {
+    background-image: url('/static/images/trening_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    font-size: 2em;
+    padding: 20px; 
+}
+
+.workout-content {
+    background: rgb(255, 255, 255); 
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Stylizacja dla strony profilu */
+.profile-background {
+    background-image: url('/static/images/profile_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}
+
+.profile-content {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    border-radius: 15px;
+}
+/* Stylizacja dla podstrony "stwórz plan" */
+.create-plan-background {
+    background-image: url('/static/images/create_plan_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}
+
+.create-plan-content {
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 20px;
+    border-radius: 10px;
+}
+/* Stylizacja dla podstrony "produkty" */
+.productbackground {
+    background-image: url('/static/images/produkt_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    text-shadow: 0.1em 0.1em 0.2em black;
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+
+}
+.bmibackground{
+    background-image: url('/static/images/bmi_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #000000; 
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}
+.loginbackground{
+    background-image: url('/static/images/login_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}
+.registerbackground{
+    background-image: url('/static/images/register_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}
+/* Stylizacja dla podstrony "post" */
+.postbackground{
+    background-image: url('/static/images/post_background.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    text-shadow: 0.1em 0.1em 0.2em black;
+
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}
+.editdietbackground{
+    background-image: url('/static/images/edit_diet_backround.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    text-shadow: 0.1em 0.1em 0.2em black;
+
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}
+.editworkoutbackground{
+    background-image: url('/static/images/edit_workout_backround.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 100vh; 
+    color: #ffffff; 
+    text-shadow: 0.1em 0.1em 0.2em black;
+
+    font-size: 2em;
+    font-weight: bold;
+    align-items: center;
+    padding: 20px; 
+}

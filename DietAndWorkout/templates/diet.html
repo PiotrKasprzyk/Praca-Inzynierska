@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dieta</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="diet-background">
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h1>Plany Dietetyczne</h1>
+        <div class="plan-list">
+            {% for plan in diet_plans %}
+                <div class="plan-item">
+                    <div>
+                        <h2 class="plan-name">{{ plan.meal_name }}</h2>
+                        <p class="plan-details">{{ plan.meal_type }} - {{ plan.kcal }} kcal</p>
+                        <p>{{ plan.recipe }}</p>
+                    </div>
+                    <div class="plan-actions">
+                        <a href="{{ url_for('edit_diet', diet_id=plan.id) }}" class="btn btn-primary">Edytuj</a>
+                        <form action="{{ url_for('delete_diet', diet_id=plan.id) }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn btn-danger">Usuń</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

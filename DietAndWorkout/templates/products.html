@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_dark.css') }}">
+
+    <title>Produkty</title>
+</head>
+<body class="productbackground">
+    {% include 'navbar.html' %}
+    <div>
+        <h1>Dodaj nowy produkt</h1>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.name.label }}<br>
+                {{ form.name(size=32) }}<br>
+            </div>
+            <div>
+                {{ form.kcal.label }}<br>
+                {{ form.kcal(size=32) }}<br>
+            </div>
+            <div>
+                {{ form.carbs.label }}<br>
+                {{ form.carbs(size=32) }}<br>
+            </div>
+            <div>
+                {{ form.protein.label }}<br>
+                {{ form.protein(size=32) }}<br>
+            </div>
+            <div>
+                {{ form.fat.label }}<br>
+                {{ form.fat(size=32) }}<br>
+            </div>
+            <div>
+                {{ form.category.label }}<br>
+                {{ form.category() }}<br>
+            </div>
+            <div>
+                {{ form.submit() }}
+            </div>
+        </form>
+    </div>
+    <div>
+        <h2>Lista produktów</h2>
+        <ul>
+            {% for item in food_items %}
+                <li>{{ item.name }} - {{ item.kcal }} kcal - {{ item.carbs }} carbs - {{ item.protein }} protein - {{ item.fat }} fat - {{ item.category.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

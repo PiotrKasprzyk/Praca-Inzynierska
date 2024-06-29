@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_dark.css') }}">
+
+    <title>Stwórz Plan</title>
+</head>
+<body class="create-plan-background">
+    {% include 'navbar.html' %}
+    <div class="container">
+        <h2>Stwórz Plan</h2>
+        <h3>Plan diety</h3>
+        <form method="POST" action="{{ url_for('create_plan') }}">
+            {{ diet_form.hidden_tag() }}
+            <div class="form-group">
+                {{ diet_form.meal_name.label }}<br>
+                {{ diet_form.meal_name(size=32) }}<br>
+            </div>
+            <div class="form-group">
+                {{ diet_form.recipe.label }}<br>
+                {{ diet_form.recipe(cols=30, rows=5) }}<br>
+            </div>
+            <div class="form-group">
+                {{ diet_form.meal_type.label }}<br>
+                {{ diet_form.meal_type() }}<br>
+            </div>
+            <div class="form-group">
+                {{ diet_form.kcal.label }}<br>
+                {{ diet_form.kcal() }}<br>
+            </div>
+            <div class="form-group">
+                {{ diet_form.carbs.label }}<br>
+                {{ diet_form.carbs() }}<br>
+            </div>
+            <div class="form-group">
+                {{ diet_form.protein.label }}<br>
+                {{ diet_form.protein() }}<br>
+            </div>
+            <div class="form-group">
+                {{ diet_form.fat.label }}<br>
+                {{ diet_form.fat() }}<br>
+            </div>
+            <div class="form-group">
+                {{ diet_form.submit_diet() }}<br>
+            </div>
+        </form>
+
+        <h3>Plan treningowy</h3>
+        <form method="POST" action="{{ url_for('create_plan') }}">
+            {{ workout_form.hidden_tag() }}
+            <div class="form-group">
+                {{ workout_form.exercise_name.label }}<br>
+                {{ workout_form.exercise_name(size=32) }}<br>
+            </div>
+            <div class="form-group">
+                {{ workout_form.day.label }}<br>
+                {{ workout_form.day() }}<br>
+            </div>
+            <div class="form-group">
+                {{ workout_form.sets.label }}<br>
+                {{ workout_form.sets() }}<br>
+            </div>
+            <div class="form-group">
+                {{ workout_form.reps.label }}<br>
+                {{ workout_form.reps() }}<br>
+            </div>
+            <div class="form-group">
+                {{ workout_form.submit_workout() }}<br>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

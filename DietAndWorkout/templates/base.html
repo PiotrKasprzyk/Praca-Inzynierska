@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles_dark.css') }}">
+    <link rel="icon" type="image/webp" href="{{ url_for('static', filename='images/logo.webp') }}">
+
+</head>
+<body class="light-mode">
+    <div class="navbar">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Logo" class="logo">
+        <a href="{{ url_for('home') }}">Strona główna</a>
+        <a href="{{ url_for('news') }}">Wiadomości</a>
+        <a href="{{ url_for('diet') }}">Dieta</a>
+        <a href="{{ url_for('workout') }}">Trening</a>
+        <a href="{{ url_for('bmi') }}">Kalkulator BMI</a>
+   
+        {% if current_user.is_authenticated %}
+        <a href="{{ url_for('products') }}">Produkty</a>
+        <a href="{{ url_for('profile') }}">Mój Profil</a>
+       
+        <a href="{{ url_for('create_plan') }}">Stwórz Plan</a>
+        <a href="{{ url_for('logout') }}">Wyloguj</a>
+        {% else %}
+        <a href="{{ url_for('login') }}">Logowanie</a>
+        <a href="{{ url_for('register') }}">Rejestracja</a>
+        {% endif %}
+    </div>
+    <button id="theme-toggle">Zmień motyw</button>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <script>
+        document.getElementById('theme-toggle').addEventListener('click', function() {
+            var body = document.body;
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                this.textContent = 'Zmień na jasny motyw';
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                this.textContent = 'Zmień na ciemny motyw';
+            }
+        });
+    </script>
+</body>
+</html>

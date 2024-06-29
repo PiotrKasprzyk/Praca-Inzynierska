@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="postbackground">
+    <nav>
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Logo" class="logo">
+        </a>
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('news') }}">Wiadomości</a>
+        <a href="{{ url_for('diet') }}">Dieta</a>
+        <a href="{{ url_for('workout') }}">Trening</a>
+        <a href="{{ url_for('products') }}">Produkty</a>
+        <a href="{{ url_for('bmi') }}">BMI</a>
+        <a href="{{ url_for('create_plan') }}">Stwórz plan</a>
+        <a href="{{ url_for('profile') }}">Profil</a>
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('logout') }}">Wyloguj</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">Zaloguj</a>
+            <a href="{{ url_for('register') }}">Rejestracja</a>
+        {% endif %}
+        <a href="{{ url_for('change_theme') }}">Zmień motyw</a>
+    </nav>
+    <div class="container">
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.content }}</p>
+        <p>Posted by {{ post.author.username }} on {{ post.date_posted.strftime('%Y-%m-%d') }}</p>
+        <form action="{{ url_for('like_post', post_id=post.id) }}" method="post">
+            {{ like_form.hidden_tag() }}
+            <button type="submit" class="like-button">Like</button>
+        </form>
+        <p>{{ post.likes|length }} Likes</p>
+        <h2>Comments:</h2>
+        <ul class="comments-list">
+            {% for comment in post.comments %}
+                <li class="comment-item">
+                    <p>{{ comment.content }}</p>
+                    <p class="comment-meta">by {{ comment.author.username }} on {{ comment.date_posted.strftime('%Y-%m-%d') }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+        <form action="{{ url_for('add_comment', post_id=post.id) }}" method="post">
+            {{ comment_form.hidden_tag() }}
+            <div class="form-group">
+                {{ comment_form.comment.label }}
+                {{ comment_form.comment(class_='form-control') }}
+            </div>
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+        </form>
+    </div>
+</body>
+</html>

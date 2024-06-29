@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/webp" href="{{ url_for('static', filename='images/logo.webp') }}">
+
+    <title>Wiadomości</title>
+</head>
+<body class="news-background",class="container">
+    {% include 'navbar.html' %}
+    <h1>Wiadomości</h1>
+    <form action="{{ url_for('news') }}" method="POST">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }} {{ form.title(size=32) }}
+        </div>
+        <div>
+            {{ form.content.label }} {{ form.content(cols=32, rows=4) }}
+        </div>
+        <div>
+            {{ form.submit() }}
+        </div>
+    </form>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a>
+            <p>{{ post.content }}</p>
+            <p>Likes: {{ post.likes | length }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
