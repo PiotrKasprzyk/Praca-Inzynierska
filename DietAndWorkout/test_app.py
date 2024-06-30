@@ -6,7 +6,6 @@ from werkzeug.security import generate_password_hash
 
 class BasicTests(unittest.TestCase):
 
-    # Zainicjalizowanie środowiska testowego
     def setUp(self):
         app.config['TESTING'] = True
         app.config['WTF_CSRF_ENABLED'] = False
